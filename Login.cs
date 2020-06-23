@@ -13,12 +13,12 @@ using WindowsFormsApp2;
 
 namespace Login
 {
-    public partial class Login : Form
+    public partial class LI : Form
     {
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader dr;
-        public Login()
+        public LI()
         {
             InitializeComponent();
         }

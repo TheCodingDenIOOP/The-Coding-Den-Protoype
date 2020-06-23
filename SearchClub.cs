@@ -98,17 +98,18 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void btnB_Click(object sender, EventArgs e)
-        {
-            Dashboard f1 = new Dashboard();
-            f1.Show();
-            this.Hide();
-        }
-
             private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
             {
 
             }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LI lo = new LI();
+            lo.Show();
+            this.Hide();
+
         }
+    }
     
 }

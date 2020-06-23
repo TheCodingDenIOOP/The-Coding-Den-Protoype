@@ -1,6 +1,6 @@
 ﻿namespace Login
 {
-    partial class Login
+    partial class LI
     {
         /// <summary>
         /// Required designer variable.

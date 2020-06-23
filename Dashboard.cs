@@ -50,7 +50,7 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            LI login = new LI();
             login.Show();
             this.Close();
         }
@@ -174,9 +174,7 @@ namespace Login
 
         private void btnSIF_Click(object sender, EventArgs e)
         {
-            Search f3 = new Search ();
-            f3.Show();
-            this.Hide();
+
         }
     }
 }

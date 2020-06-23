@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnB = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -106,23 +106,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.btnB);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Location = new System.Drawing.Point(1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(692, 419);
             this.panel1.TabIndex = 6;
             // 
-            // btnB
+            // button2
             // 
-            this.btnB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnB.Location = new System.Drawing.Point(30, 370);
-            this.btnB.Name = "btnB";
-            this.btnB.Size = new System.Drawing.Size(98, 37);
-            this.btnB.TabIndex = 7;
-            this.btnB.Text = "Back";
-            this.btnB.UseVisualStyleBackColor = false;
-            this.btnB.Click += new System.EventHandler(this.btnB_Click);
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(30, 370);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 37);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Log out";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Search
             // 
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnB;
+        private System.Windows.Forms.Button button2;
     }
 }
 
