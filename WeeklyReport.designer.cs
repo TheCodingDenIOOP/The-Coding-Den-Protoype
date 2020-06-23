@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWReport = new System.Windows.Forms.Label();
             this.lblWReport2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -38,39 +36,14 @@
             this.uPDATEDESCRIPTIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtAch = new System.Windows.Forms.TextBox();
-            this.txtAct = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblAch = new System.Windows.Forms.Label();
-            this.lblAct = new System.Windows.Forms.Label();
-            this.txtReport = new System.Windows.Forms.Label();
-            this.txtCn = new System.Windows.Forms.Label();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(120, 34);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Lakers Regular", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(119, 30);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // lblWReport
             // 
@@ -141,17 +114,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.txtAch);
-            this.panel1.Controls.Add(this.txtAct);
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.lblAch);
-            this.panel1.Controls.Add(this.lblAct);
-            this.panel1.Controls.Add(this.txtReport);
-            this.panel1.Controls.Add(this.txtCn);
-            this.panel1.Controls.Add(this.btnInsert);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
@@ -159,122 +121,32 @@
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(500, 137);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 22);
-            this.dateTimePicker1.TabIndex = 31;
-            // 
-            // txtAch
-            // 
-            this.txtAch.Location = new System.Drawing.Point(165, 231);
-            this.txtAch.Multiline = true;
-            this.txtAch.Name = "txtAch";
-            this.txtAch.Size = new System.Drawing.Size(616, 35);
-            this.txtAch.TabIndex = 30;
-            this.txtAch.TextChanged += new System.EventHandler(this.txtAch_TextChanged);
-            // 
-            // txtAct
-            // 
-            this.txtAct.Location = new System.Drawing.Point(165, 174);
-            this.txtAct.Multiline = true;
-            this.txtAct.Name = "txtAct";
-            this.txtAct.Size = new System.Drawing.Size(616, 43);
-            this.txtAct.TabIndex = 29;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(165, 137);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(201, 22);
-            this.txtName.TabIndex = 28;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            // 
-            // lblAch
-            // 
-            this.lblAch.AutoSize = true;
-            this.lblAch.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAch.Location = new System.Drawing.Point(43, 230);
-            this.lblAch.Name = "lblAch";
-            this.lblAch.Size = new System.Drawing.Size(116, 20);
-            this.lblAch.TabIndex = 27;
-            this.lblAch.Text = "Achievements";
-            // 
-            // lblAct
-            // 
-            this.lblAct.AutoSize = true;
-            this.lblAct.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAct.Location = new System.Drawing.Point(43, 176);
-            this.lblAct.Name = "lblAct";
-            this.lblAct.Size = new System.Drawing.Size(78, 20);
-            this.lblAct.TabIndex = 26;
-            this.lblAct.Text = "Activities";
-            // 
-            // txtReport
-            // 
-            this.txtReport.AutoSize = true;
-            this.txtReport.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReport.Location = new System.Drawing.Point(382, 136);
-            this.txtReport.Name = "txtReport";
-            this.txtReport.Size = new System.Drawing.Size(102, 20);
-            this.txtReport.TabIndex = 25;
-            this.txtReport.Text = "Report Date";
-            // 
-            // txtCn
-            // 
-            this.txtCn.AutoSize = true;
-            this.txtCn.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCn.Location = new System.Drawing.Point(43, 136);
-            this.txtCn.Name = "txtCn";
-            this.txtCn.Size = new System.Drawing.Size(91, 20);
-            this.txtCn.TabIndex = 24;
-            this.txtCn.Text = "Club Name";
-            this.txtCn.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(517, 282);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(78, 31);
-            this.btnInsert.TabIndex = 23;
-            this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(694, 282);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 31);
-            this.btnDelete.TabIndex = 22;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(601, 282);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(87, 31);
-            this.btnUpdate.TabIndex = 21;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 319);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 132);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(734, 403);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Mikado Bold DEMO", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 60);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // WeeklyReport
             // 
@@ -292,20 +164,17 @@
             this.Text = "WeeklyReport";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WeeklyReport_FormClosing);
             this.Load += new System.EventHandler(this.WeeklyReport_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Label lblWReport;
         private System.Windows.Forms.Label lblWReport2;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -314,17 +183,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label txtCn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtAch;
-        private System.Windows.Forms.TextBox txtAct;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lblAch;
-        private System.Windows.Forms.Label lblAct;
-        private System.Windows.Forms.Label txtReport;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 
