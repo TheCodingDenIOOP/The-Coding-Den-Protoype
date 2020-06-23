@@ -151,5 +151,10 @@ namespace Secretary
             textBox2.Clear();
             txtClub.Clear();
         }
+
+        private void lblClubDes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
