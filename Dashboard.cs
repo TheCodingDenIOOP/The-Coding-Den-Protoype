@@ -25,14 +25,12 @@ namespace Login
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
             string strSQL = "SELECT * FROM Clubs WHERE Status = 'Active'";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;
 
-            conn.Open();
+            Controller ctrl = new Controller();
+            ctrl.Connect();
             reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -151,9 +149,9 @@ namespace Login
 
         private void btnClubAct_Click(object sender, EventArgs e)
         {
-            SelectDate sd = new SelectDate();
+            /*SelectDate sd = new SelectDate();
             sd.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

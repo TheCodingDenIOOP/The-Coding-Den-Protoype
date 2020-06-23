@@ -35,7 +35,7 @@ namespace Login
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "insert into Clubs (ClubID, ClubName, President, VicePresident, " +
+            cmd.CommandText = "insert into Clubs (ClubName, President, VicePresident, " +
                 "Secretary, RegistrationDate, Description, Status) values('" + txtClubName.Text + "'," +
                 "'" + txtPresident.Text + "', '" + txtVPresident.Text + "', '" + txtSecretary.Text + "'" +
                 ",'" + txtRgstDate.Text + "','" + txtDescription.Text + "', 'Active')";

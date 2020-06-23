@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    class ClubRegistration
+    class Club
     {
-        private string ClubName, President, VicePresident, Secretary, Description;
+        private string ClubId;
+        private string ClubName;
+        private string President;
+        private string VicePresident;
+        private string Secretary;
+        private string Description;
         private DateTime RegistrationDate;
 
         //Constructor
-        public ClubRegistration(string ClubName, DateTime RegistrationDate, string President, string VicePresident, string Secretary, string Description, string clubName = null, string president = null, string vicePresident = null, string secretary = null, string description = null, DateTime registrationDate = default)
+        public Club(string ClubId, ClubName, DateTime RegistrationDate, string President, string VicePresident, string Secretary, string Description, string clubName = null, string president = null, string vicePresident = null, string secretary = null, string description = null, DateTime registrationDate = default)
         {
             //Initialization of data field values
+            this.ClubId = clubId;
             this.ClubName = clubName;
             this.President = president;
             this.VicePresident = vicePresident;
