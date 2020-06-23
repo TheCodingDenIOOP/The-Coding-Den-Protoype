@@ -13,28 +13,82 @@ namespace Secretary
 {
     public partial class WeeklyReport : Form
     {
-        SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+        public static SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
                 "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
-        SqlCommand cmd;
-        SqlDataAdapter adapt;
-        //ID variable used in Updating and Deleting Record  
-        int ID = 0;
+        string ReportId;
+        int ReportId1;
+        int Del_ReportId;
 
         public WeeklyReport()
         {
             InitializeComponent();
-            DisplayData();
         }
 
         private void WeeklyReport_Load(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
 
+            fill_grid();
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        public void fill_grid()
         {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from WeeklyReport";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
 
+
+        }
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            ReportId = dataGridView1.Rows[e.RowIndex].Cells["ReportId"].Value.ToString();
+
+            if (ReportId == "")
+            {
+                ReportId1 = 0;
+            }
+            else
+            {
+                ReportId1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ReportId"].Value.ToString());
+
+            }
+
+            if (ReportId1 == 0)
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into WeeklyReport values('" + dataGridView1.Rows[e.RowIndex].Cells["ClubName"].Value.ToString() + "','" + dataGridView1.Rows[e.RowIndex].Cells["ReportDate"].Value.ToString() + "', '" + dataGridView1.Rows[e.RowIndex].Cells["Activities"].Value.ToString() + "', '" + dataGridView1.Rows[e.RowIndex].Cells["Achievements"].Value.ToString() + "')";
+                cmd.ExecuteNonQuery();
+                fill_grid();
+
+            }
+            else
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update WeeklyReport set ClubName='" + dataGridView1.Rows[e.RowIndex].Cells["ClubName"].Value.ToString() + "', ReportDate='" + dataGridView1.Rows[e.RowIndex].Cells["ReportDate"].Value.ToString() + "', Activities='" + dataGridView1.Rows[e.RowIndex].Cells["Activities"].Value.ToString() + "', Achievements='" + dataGridView1.Rows[e.RowIndex].Cells["Achievements"].Value.ToString() + "' where ReportId=" + ReportId1 + "";
+                cmd.ExecuteNonQuery();
+                fill_grid();
+            }
+        }
+        private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Del_ReportId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ReportId"].Value.ToString());
+                this.contextMenuStrip1.Show(this.dataGridView1, e.Location);
+                contextMenuStrip1.Show(Cursor.Position);
+            }
         }
 
         private void cLUBREPRESENTATIVESECRETARYToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,97 +126,7 @@ namespace Secretary
 
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            //Insert Data 
-            if (txtName.Text != "" && txtAct.Text != "" && txtAch.Text != "")
-            {
-                cmd = new SqlCommand("insert into WeeklyReport(Name,Activity,Achievement) values(@name,@activity,@achievement)", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@name", txtName.Text);
-                cmd.Parameters.AddWithValue("@activity", txtAct.Text);
-                cmd.Parameters.AddWithValue("@achievement", txtAch.Text);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record Inserted Successfully");
-                DisplayData();
-                ClearData();
-            }
-            else
-            {
-                MessageBox.Show("Please Provide Details!");
-            }
-
-        }
-        //Display Data in DataGridView  
-        private void DisplayData()
-        {
-            con.Open();
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from Clubs,WeeklyReport", con);
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-            con.Close();
-        }
-        //Clear Data  
-        private void ClearData()
-        {
-            txtName.Text = "";
-            lblAct.Text = "";
-            txtAch.Text = "";
-            ID = 0;
-        }
-        //dataGridView1 RowHeaderMouseClick Event  
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtAct.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtAch.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-        }
-        //Update Record  
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (txtName.Text != "" && txtAct.Text != "" && txtAch.Text != "")
-            {
-                cmd = new SqlCommand("update WeeklyReport set Name=@name,Activity=@activity,Achievement=@Achievement where ID=@id", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@id", ID);
-                cmd.Parameters.AddWithValue("@name", txtName.Text);
-                cmd.Parameters.AddWithValue("@activity", lblAct.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Record Updated Successfully");
-                con.Close();
-                DisplayData();
-                ClearData();
-            }
-            else
-            {
-                MessageBox.Show("Please Select Record to Update");
-            }
-        }
-        //Delete Record  
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (ID != 0)
-            {
-                cmd = new SqlCommand("delete WeeklyReport where ID=@id", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@id", ID);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record Deleted Successfully!");
-                DisplayData();
-                ClearData();
-            }
-            else
-            {
-                MessageBox.Show("Please Select Record to Delete");
-            }
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
         }
