@@ -160,15 +160,5 @@ namespace Login
         {
 
         }
-
-        private void lblClublist_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstClub_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

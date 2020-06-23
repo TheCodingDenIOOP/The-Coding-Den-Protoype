@@ -61,7 +61,7 @@
             this.lblGenerateRp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblGenerateRp.Location = new System.Drawing.Point(474, 211);
             this.lblGenerateRp.Name = "lblGenerateRp";
-            this.lblGenerateRp.Size = new System.Drawing.Size(154, 25);
+            this.lblGenerateRp.Size = new System.Drawing.Size(127, 20);
             this.lblGenerateRp.TabIndex = 6;
             this.lblGenerateRp.Text = "Generate report:";
             // 
@@ -123,13 +123,12 @@
             // lstClub
             // 
             this.lstClub.FormattingEnabled = true;
-            this.lstClub.ItemHeight = 25;
+            this.lstClub.ItemHeight = 20;
             this.lstClub.Location = new System.Drawing.Point(35, 90);
             this.lstClub.Name = "lstClub";
             this.lstClub.ScrollAlwaysVisible = true;
-            this.lstClub.Size = new System.Drawing.Size(408, 254);
+            this.lstClub.Size = new System.Drawing.Size(408, 244);
             this.lstClub.TabIndex = 12;
-            this.lstClub.SelectedIndexChanged += new System.EventHandler(this.lstClub_SelectedIndexChanged);
             // 
             // lblClublist
             // 
@@ -138,16 +137,15 @@
             this.lblClublist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblClublist.Location = new System.Drawing.Point(31, 34);
             this.lblClublist.Name = "lblClublist";
-            this.lblClublist.Size = new System.Drawing.Size(147, 25);
+            this.lblClublist.Size = new System.Drawing.Size(117, 20);
             this.lblClublist.TabIndex = 13;
             this.lblClublist.Text = "Active Club List";
-            this.lblClublist.Click += new System.EventHandler(this.lblClublist_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(36, 58);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(315, 30);
+            this.txtSearch.Size = new System.Drawing.Size(315, 26);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -183,7 +181,7 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 416);
             this.Controls.Add(this.btnRemove);
