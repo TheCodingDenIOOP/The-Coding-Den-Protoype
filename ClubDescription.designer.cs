@@ -100,6 +100,7 @@
             this.lblClubDes.Size = new System.Drawing.Size(256, 28);
             this.lblClubDes.TabIndex = 2;
             this.lblClubDes.Text = "EDIT CLUB DESCRIPTION";
+            this.lblClubDes.Click += new System.EventHandler(this.lblClubDes_Click);
             // 
             // label2
             // 

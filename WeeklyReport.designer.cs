@@ -38,18 +38,18 @@
             this.uPDATEDESCRIPTIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.txtCn = new System.Windows.Forms.Label();
-            this.txtReport = new System.Windows.Forms.Label();
-            this.txtAct = new System.Windows.Forms.Label();
-            this.txtAch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtAch = new System.Windows.Forms.TextBox();
+            this.txtAct = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblAch = new System.Windows.Forms.Label();
+            this.lblAct = new System.Windows.Forms.Label();
+            this.txtReport = new System.Windows.Forms.Label();
+            this.txtCn = new System.Windows.Forms.Label();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,7 +82,6 @@
             this.lblWReport.Size = new System.Drawing.Size(175, 32);
             this.lblWReport.TabIndex = 16;
             this.lblWReport.Text = "Weekly Report";
-            this.lblWReport.Click += new System.EventHandler(this.lblWReport_Click);
             // 
             // lblWReport2
             // 
@@ -143,11 +142,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.txtAch);
             this.panel1.Controls.Add(this.txtAct);
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.lblAch);
+            this.panel1.Controls.Add(this.lblAct);
             this.panel1.Controls.Add(this.txtReport);
             this.panel1.Controls.Add(this.txtCn);
             this.panel1.Controls.Add(this.btnInsert);
@@ -160,51 +159,66 @@
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dataGridView1
+            // dateTimePicker1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 319);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 216);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dateTimePicker1.Location = new System.Drawing.Point(500, 137);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(281, 22);
+            this.dateTimePicker1.TabIndex = 31;
             // 
-            // btnUpdate
+            // txtAch
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(601, 282);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(87, 31);
-            this.btnUpdate.TabIndex = 21;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.txtAch.Location = new System.Drawing.Point(165, 231);
+            this.txtAch.Multiline = true;
+            this.txtAch.Name = "txtAch";
+            this.txtAch.Size = new System.Drawing.Size(616, 35);
+            this.txtAch.TabIndex = 30;
             // 
-            // btnDelete
+            // txtAct
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(694, 282);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 31);
-            this.btnDelete.TabIndex = 22;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.txtAct.Location = new System.Drawing.Point(165, 174);
+            this.txtAct.Multiline = true;
+            this.txtAct.Name = "txtAct";
+            this.txtAct.Size = new System.Drawing.Size(616, 43);
+            this.txtAct.TabIndex = 29;
             // 
-            // btnInsert
+            // txtName
             // 
-            this.btnInsert.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(517, 282);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(78, 31);
-            this.btnInsert.TabIndex = 23;
-            this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = false;
+            this.txtName.Location = new System.Drawing.Point(165, 137);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(201, 22);
+            this.txtName.TabIndex = 28;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            // 
+            // lblAch
+            // 
+            this.lblAch.AutoSize = true;
+            this.lblAch.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAch.Location = new System.Drawing.Point(43, 230);
+            this.lblAch.Name = "lblAch";
+            this.lblAch.Size = new System.Drawing.Size(116, 20);
+            this.lblAch.TabIndex = 27;
+            this.lblAch.Text = "Achievements";
+            // 
+            // lblAct
+            // 
+            this.lblAct.AutoSize = true;
+            this.lblAct.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAct.Location = new System.Drawing.Point(43, 176);
+            this.lblAct.Name = "lblAct";
+            this.lblAct.Size = new System.Drawing.Size(78, 20);
+            this.lblAct.TabIndex = 26;
+            this.lblAct.Text = "Activities";
+            // 
+            // txtReport
+            // 
+            this.txtReport.AutoSize = true;
+            this.txtReport.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReport.Location = new System.Drawing.Point(382, 136);
+            this.txtReport.Name = "txtReport";
+            this.txtReport.Size = new System.Drawing.Size(102, 20);
+            this.txtReport.TabIndex = 25;
+            this.txtReport.Text = "Report Date";
             // 
             // txtCn
             // 
@@ -217,65 +231,49 @@
             this.txtCn.Text = "Club Name";
             this.txtCn.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtReport
+            // btnInsert
             // 
-            this.txtReport.AutoSize = true;
-            this.txtReport.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReport.Location = new System.Drawing.Point(382, 136);
-            this.txtReport.Name = "txtReport";
-            this.txtReport.Size = new System.Drawing.Size(102, 20);
-            this.txtReport.TabIndex = 25;
-            this.txtReport.Text = "Report Date";
+            this.btnInsert.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(517, 282);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(78, 31);
+            this.btnInsert.TabIndex = 23;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // txtAct
+            // btnDelete
             // 
-            this.txtAct.AutoSize = true;
-            this.txtAct.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAct.Location = new System.Drawing.Point(43, 176);
-            this.txtAct.Name = "txtAct";
-            this.txtAct.Size = new System.Drawing.Size(78, 20);
-            this.txtAct.TabIndex = 26;
-            this.txtAct.Text = "Activities";
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(694, 282);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(87, 31);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // txtAch
+            // btnUpdate
             // 
-            this.txtAch.AutoSize = true;
-            this.txtAch.Font = new System.Drawing.Font("Mithella", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAch.Location = new System.Drawing.Point(43, 230);
-            this.txtAch.Name = "txtAch";
-            this.txtAch.Size = new System.Drawing.Size(116, 20);
-            this.txtAch.TabIndex = 27;
-            this.txtAch.Text = "Achievements";
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(601, 282);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(87, 31);
+            this.btnUpdate.TabIndex = 21;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // dataGridView1
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 22);
-            this.textBox1.TabIndex = 28;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(165, 174);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(616, 43);
-            this.textBox2.TabIndex = 29;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(165, 231);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(616, 35);
-            this.textBox3.TabIndex = 30;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(500, 137);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 22);
-            this.dateTimePicker1.TabIndex = 31;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(47, 319);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(734, 216);
+            this.dataGridView1.TabIndex = 14;
             // 
             // WeeklyReport
             // 
@@ -320,11 +318,11 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label txtCn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txtAch;
-        private System.Windows.Forms.Label txtAct;
+        private System.Windows.Forms.TextBox txtAch;
+        private System.Windows.Forms.TextBox txtAct;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblAch;
+        private System.Windows.Forms.Label lblAct;
         private System.Windows.Forms.Label txtReport;
     }
 }
