@@ -147,7 +147,6 @@ namespace Login
         {
             ActiveClubsReport acr = new ActiveClubsReport();
             acr.Show();
-            this.Close();
         }
 
         private void btnClubAct_Click(object sender, EventArgs e)
