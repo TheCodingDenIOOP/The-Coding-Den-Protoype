@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblLogo = new System.Windows.Forms.Label();
             this.lblClubName = new System.Windows.Forms.Label();
             this.lblPresident = new System.Windows.Forms.Label();
             this.lblVPresident = new System.Windows.Forms.Label();
             this.lblSecretary = new System.Windows.Forms.Label();
             this.lblRgstDate = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnUpload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtClubName = new System.Windows.Forms.TextBox();
@@ -46,29 +43,17 @@
             this.txtVPresident = new System.Windows.Forms.TextBox();
             this.txtPresident = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblLogo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblLogo.Location = new System.Drawing.Point(34, 36);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(102, 25);
-            this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "Club Logo";
             // 
             // lblClubName
             // 
             this.lblClubName.AutoSize = true;
             this.lblClubName.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblClubName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblClubName.Location = new System.Drawing.Point(34, 195);
+            this.lblClubName.Location = new System.Drawing.Point(28, 26);
             this.lblClubName.Name = "lblClubName";
-            this.lblClubName.Size = new System.Drawing.Size(110, 25);
+            this.lblClubName.Size = new System.Drawing.Size(87, 20);
             this.lblClubName.TabIndex = 1;
             this.lblClubName.Text = "Club Name";
             // 
@@ -76,9 +61,9 @@
             // 
             this.lblPresident.AutoSize = true;
             this.lblPresident.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblPresident.Location = new System.Drawing.Point(34, 254);
+            this.lblPresident.Location = new System.Drawing.Point(28, 85);
             this.lblPresident.Name = "lblPresident";
-            this.lblPresident.Size = new System.Drawing.Size(94, 25);
+            this.lblPresident.Size = new System.Drawing.Size(76, 20);
             this.lblPresident.TabIndex = 2;
             this.lblPresident.Text = "President";
             // 
@@ -86,9 +71,9 @@
             // 
             this.lblVPresident.AutoSize = true;
             this.lblVPresident.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblVPresident.Location = new System.Drawing.Point(34, 317);
+            this.lblVPresident.Location = new System.Drawing.Point(28, 148);
             this.lblVPresident.Name = "lblVPresident";
-            this.lblVPresident.Size = new System.Drawing.Size(138, 25);
+            this.lblVPresident.Size = new System.Drawing.Size(111, 20);
             this.lblVPresident.TabIndex = 3;
             this.lblVPresident.Text = "Vice President";
             // 
@@ -96,9 +81,9 @@
             // 
             this.lblSecretary.AutoSize = true;
             this.lblSecretary.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblSecretary.Location = new System.Drawing.Point(33, 379);
+            this.lblSecretary.Location = new System.Drawing.Point(27, 210);
             this.lblSecretary.Name = "lblSecretary";
-            this.lblSecretary.Size = new System.Drawing.Size(96, 25);
+            this.lblSecretary.Size = new System.Drawing.Size(77, 20);
             this.lblSecretary.TabIndex = 4;
             this.lblSecretary.Text = "Secretary";
             // 
@@ -106,9 +91,9 @@
             // 
             this.lblRgstDate.AutoSize = true;
             this.lblRgstDate.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblRgstDate.Location = new System.Drawing.Point(37, 438);
+            this.lblRgstDate.Location = new System.Drawing.Point(31, 269);
             this.lblRgstDate.Name = "lblRgstDate";
-            this.lblRgstDate.Size = new System.Drawing.Size(129, 25);
+            this.lblRgstDate.Size = new System.Drawing.Size(108, 20);
             this.lblRgstDate.TabIndex = 5;
             this.lblRgstDate.Text = "Register Date";
             // 
@@ -116,36 +101,16 @@
             // 
             this.lblDesc.AutoSize = true;
             this.lblDesc.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblDesc.Location = new System.Drawing.Point(33, 506);
+            this.lblDesc.Location = new System.Drawing.Point(27, 337);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(155, 25);
+            this.lblDesc.Size = new System.Drawing.Size(125, 20);
             this.lblDesc.TabIndex = 6;
             this.lblDesc.Text = "Club Description";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(206, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpload.Location = new System.Drawing.Point(206, 133);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(90, 32);
-            this.btnUpload.TabIndex = 1;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(392, 672);
+            this.btnCancel.Location = new System.Drawing.Point(382, 514);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(99, 38);
             this.btnCancel.TabIndex = 9;
@@ -156,7 +121,7 @@
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegister.Location = new System.Drawing.Point(209, 672);
+            this.btnRegister.Location = new System.Drawing.Point(248, 514);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(101, 38);
             this.btnRegister.TabIndex = 8;
@@ -166,31 +131,31 @@
             // 
             // txtClubName
             // 
-            this.txtClubName.Location = new System.Drawing.Point(206, 192);
+            this.txtClubName.Location = new System.Drawing.Point(200, 23);
             this.txtClubName.MaxLength = 50;
             this.txtClubName.Name = "txtClubName";
-            this.txtClubName.Size = new System.Drawing.Size(281, 30);
+            this.txtClubName.Size = new System.Drawing.Size(281, 26);
             this.txtClubName.TabIndex = 2;
             // 
             // txtSecretary
             // 
-            this.txtSecretary.Location = new System.Drawing.Point(206, 376);
+            this.txtSecretary.Location = new System.Drawing.Point(200, 207);
             this.txtSecretary.MaxLength = 50;
             this.txtSecretary.Name = "txtSecretary";
-            this.txtSecretary.Size = new System.Drawing.Size(281, 30);
+            this.txtSecretary.Size = new System.Drawing.Size(281, 26);
             this.txtSecretary.TabIndex = 5;
             // 
             // txtRgstDate
             // 
-            this.txtRgstDate.Location = new System.Drawing.Point(206, 435);
+            this.txtRgstDate.Location = new System.Drawing.Point(200, 266);
             this.txtRgstDate.MaxLength = 50;
             this.txtRgstDate.Name = "txtRgstDate";
-            this.txtRgstDate.Size = new System.Drawing.Size(281, 30);
+            this.txtRgstDate.Size = new System.Drawing.Size(281, 26);
             this.txtRgstDate.TabIndex = 6;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(205, 503);
+            this.txtDescription.Location = new System.Drawing.Point(199, 334);
             this.txtDescription.MaxLength = 500;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -199,74 +164,66 @@
             // 
             // txtVPresident
             // 
-            this.txtVPresident.Location = new System.Drawing.Point(206, 311);
+            this.txtVPresident.Location = new System.Drawing.Point(200, 142);
             this.txtVPresident.MaxLength = 50;
             this.txtVPresident.Name = "txtVPresident";
-            this.txtVPresident.Size = new System.Drawing.Size(281, 30);
+            this.txtVPresident.Size = new System.Drawing.Size(281, 26);
             this.txtVPresident.TabIndex = 4;
             // 
             // txtPresident
             // 
             this.txtPresident.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtPresident.Location = new System.Drawing.Point(206, 251);
+            this.txtPresident.Location = new System.Drawing.Point(200, 82);
             this.txtPresident.MaxLength = 50;
             this.txtPresident.Name = "txtPresident";
-            this.txtPresident.Size = new System.Drawing.Size(281, 30);
+            this.txtPresident.Size = new System.Drawing.Size(281, 26);
             this.txtPresident.TabIndex = 3;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.txtPresident);
             this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.txtVPresident);
             this.panel1.Controls.Add(this.btnRegister);
+            this.panel1.Controls.Add(this.txtDescription);
+            this.panel1.Controls.Add(this.txtRgstDate);
+            this.panel1.Controls.Add(this.lblClubName);
+            this.panel1.Controls.Add(this.txtSecretary);
+            this.panel1.Controls.Add(this.lblPresident);
+            this.panel1.Controls.Add(this.txtClubName);
+            this.panel1.Controls.Add(this.lblVPresident);
+            this.panel1.Controls.Add(this.lblDesc);
+            this.panel1.Controls.Add(this.lblSecretary);
+            this.panel1.Controls.Add(this.lblRgstDate);
             this.panel1.Location = new System.Drawing.Point(-4, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 757);
+            this.panel1.Size = new System.Drawing.Size(540, 574);
             this.panel1.TabIndex = 18;
             // 
             // NewClub
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 741);
-            this.Controls.Add(this.txtPresident);
-            this.Controls.Add(this.txtVPresident);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtRgstDate);
-            this.Controls.Add(this.txtSecretary);
-            this.Controls.Add(this.txtClubName);
-            this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblDesc);
-            this.Controls.Add(this.lblRgstDate);
-            this.Controls.Add(this.lblSecretary);
-            this.Controls.Add(this.lblVPresident);
-            this.Controls.Add(this.lblPresident);
-            this.Controls.Add(this.lblClubName);
-            this.Controls.Add(this.lblLogo);
+            this.ClientSize = new System.Drawing.Size(534, 571);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NewClub";
             this.Text = "New Club";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Label lblClubName;
         private System.Windows.Forms.Label lblPresident;
         private System.Windows.Forms.Label lblVPresident;
         private System.Windows.Forms.Label lblSecretary;
         private System.Windows.Forms.Label lblRgstDate;
         private System.Windows.Forms.Label lblDesc;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtClubName;

@@ -15,6 +15,7 @@ namespace Login
     {
         SqlConnection conn;
         Dashboard dsh = new Dashboard();
+       
         public EditClub(string Str_Value)
         {
             InitializeComponent();
@@ -26,15 +27,18 @@ namespace Login
             conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
                 "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
+            SqlCommand cmd;
+            SqlDataReader reader;
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand();
+            cmd = new SqlCommand();
             cmd.Connection = conn;
             string strSQL = "SELECT * FROM Clubs WHERE ClubName = '" + txtClubName.Text + "'";
             cmd = new SqlCommand(strSQL, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                txtClubID.Text = reader["ClubID"].ToString();
                 txtClubName.Text = reader["ClubName"].ToString();
                 txtPresident.Text = reader["President"].ToString();
                 txtVPresident.Text = reader["VicePresident"].ToString();
@@ -42,7 +46,17 @@ namespace Login
                 txtRgstDate.Text = reader["RegistrationDate"].ToString();
                 txtDescription.Text = reader["Description"].ToString();
             }
+            conn.Close();
 
+            conn.Open();
+            string strSQLMem = "SELECT * FROM Members";
+            cmd = new SqlCommand(strSQLMem, conn);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lstMembers.Items.Add(reader["MemberName"].ToString());
+            }
             conn.Close();
         }
 
@@ -77,8 +91,8 @@ namespace Login
             conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
                 "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
-            //string strSQL = "SELECT * FROM Clubs";
-            string strSQL = "SELECT * FROM Members WHERE (ClubId = ) AND (ClubName LIKE '%" + txtSearch.Text + "%')";
+
+            string strSQL = "SELECT * FROM Members WHERE ClubName LIKE '%" + txtSearch.Text + "%'";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;
 
@@ -90,6 +104,13 @@ namespace Login
                 lstMembers.Items.Add(reader["ClubName"].ToString());
             }
             conn.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string ClubID = txtClubID.Text;
+            AddMember am = new AddMember(ClubID);
+            am.Show();
         }
     }
     
