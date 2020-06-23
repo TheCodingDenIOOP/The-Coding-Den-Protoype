@@ -30,10 +30,10 @@ namespace Secretary
         {
             //Setup autocomplete for txtClub textbox
             SQLCON = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
 
-            string sql = "Select ClubName From ClubDesc";
+            string sql = "Select ClubName From Clubs";
 
             SQLCON.Open();
 
@@ -72,37 +72,35 @@ namespace Secretary
         {
             //To update the description
             conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
 
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            string query = "update Clubs set President = '" + txtPresident.Text + "', VicePresident = '" + txtVPresident.Text + "', Secretary = '" + txtSecretary.Text + "' WHERE ClubName = '" + txtClubName.Text + "'";
+            string query = "update Clubs set Description = '" + textBox3.Text + "'  WHERE ClubName = '" + txtClub.Text + "'";
             cmd.CommandText = query;
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Club Info Updated Successfully!");
-            dsh.Show();
             this.Close();
             conn.Close();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
                
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             SQLCON = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
             SQLCON.Open();
 
             string NewDesc = textBox3.Text;
-            string des = "INSERT INTO ClubDesc(NewDes); VALUES (@ND);";
+            string des = "INSERT INTO Clubs(Description); VALUES (@ND);";
             SqlCommand CMD = new SqlCommand(des, SQLCON);
             CMD.Parameters.AddWithValue("@ND", NewDesc);
             SQLCON.Close();
@@ -128,10 +126,10 @@ namespace Secretary
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SQLCON = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
 
-            string sql = "Select ClubName, CurrentDes From ClubDesc Where ClubName=@cn";
+            string sql = "Select ClubName, Description From Clubs Where ClubName=@cn";
 
             SQLCON.Open();
 
@@ -142,7 +140,7 @@ namespace Secretary
             {
                 dr.Read();
                 txtClub.Text = dr["ClubName"].ToString();
-                textBox2.Text = dr["CurrentDes"].ToString();
+                textBox2.Text = dr["Description"].ToString();
             }
 
             SQLCON.Close();
@@ -150,7 +148,8 @@ namespace Secretary
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            textBox2.Clear();
+            txtClub.Clear();
         }
     }
 }

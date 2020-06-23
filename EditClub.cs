@@ -112,6 +112,11 @@ namespace Login
             AddMember am = new AddMember(ClubID);
             am.Show();
         }
+
+        private void lstMembers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

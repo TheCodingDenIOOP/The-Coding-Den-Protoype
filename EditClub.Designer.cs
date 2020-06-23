@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtClubID = new System.Windows.Forms.TextBox();
             this.lblClubID = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lstMembers = new System.Windows.Forms.ListBox();
-            this.lblMembers = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.lblClubName = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lblPresident = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblVPresident = new System.Windows.Forms.Label();
+            this.lblMembers = new System.Windows.Forms.Label();
             this.lblSecretary = new System.Windows.Forms.Label();
+            this.lstMembers = new System.Windows.Forms.ListBox();
             this.lblRgstDate = new System.Windows.Forms.Label();
+            this.txtPresident = new System.Windows.Forms.TextBox();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.txtVPresident = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.txtRgstDate = new System.Windows.Forms.TextBox();
             this.txtClubName = new System.Windows.Forms.TextBox();
             this.txtSecretary = new System.Windows.Forms.TextBox();
-            this.txtRgstDate = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtVPresident = new System.Windows.Forms.TextBox();
-            this.txtPresident = new System.Windows.Forms.TextBox();
-            this.txtClubID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,15 +82,34 @@
             this.panel1.Size = new System.Drawing.Size(540, 1058);
             this.panel1.TabIndex = 34;
             // 
+            // txtClubID
+            // 
+            this.txtClubID.Location = new System.Drawing.Point(222, 30);
+            this.txtClubID.MaxLength = 50;
+            this.txtClubID.Name = "txtClubID";
+            this.txtClubID.ReadOnly = true;
+            this.txtClubID.Size = new System.Drawing.Size(281, 30);
+            this.txtClubID.TabIndex = 34;
+            // 
             // lblClubID
             // 
             this.lblClubID.AutoSize = true;
             this.lblClubID.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblClubID.Location = new System.Drawing.Point(48, 33);
             this.lblClubID.Name = "lblClubID";
-            this.lblClubID.Size = new System.Drawing.Size(62, 20);
+            this.lblClubID.Size = new System.Drawing.Size(77, 25);
             this.lblClubID.TabIndex = 33;
             this.lblClubID.Text = "Club ID";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(220, 394);
+            this.txtDescription.MaxLength = 500;
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(282, 145);
+            this.txtDescription.TabIndex = 24;
             // 
             // btnAdd
             // 
@@ -103,32 +122,15 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lstMembers
+            // lblClubName
             // 
-            this.lstMembers.FormattingEnabled = true;
-            this.lstMembers.ItemHeight = 20;
-            this.lstMembers.Location = new System.Drawing.Point(52, 628);
-            this.lstMembers.Name = "lstMembers";
-            this.lstMembers.ScrollAlwaysVisible = true;
-            this.lstMembers.Size = new System.Drawing.Size(450, 244);
-            this.lstMembers.TabIndex = 28;
-            // 
-            // lblMembers
-            // 
-            this.lblMembers.AutoSize = true;
-            this.lblMembers.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblMembers.Location = new System.Drawing.Point(48, 569);
-            this.lblMembers.Name = "lblMembers";
-            this.lblMembers.Size = new System.Drawing.Size(111, 20);
-            this.lblMembers.TabIndex = 29;
-            this.lblMembers.Text = "Club Members";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(53, 595);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(359, 26);
-            this.txtSearch.TabIndex = 30;
+            this.lblClubName.AutoSize = true;
+            this.lblClubName.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblClubName.Location = new System.Drawing.Point(48, 86);
+            this.lblClubName.Name = "lblClubName";
+            this.lblClubName.Size = new System.Drawing.Size(110, 25);
+            this.lblClubName.TabIndex = 11;
+            this.lblClubName.Text = "Club Name";
             // 
             // btnSearch
             // 
@@ -141,25 +143,22 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // lblClubName
-            // 
-            this.lblClubName.AutoSize = true;
-            this.lblClubName.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblClubName.Location = new System.Drawing.Point(48, 86);
-            this.lblClubName.Name = "lblClubName";
-            this.lblClubName.Size = new System.Drawing.Size(87, 20);
-            this.lblClubName.TabIndex = 11;
-            this.lblClubName.Text = "Club Name";
-            // 
             // lblPresident
             // 
             this.lblPresident.AutoSize = true;
             this.lblPresident.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblPresident.Location = new System.Drawing.Point(48, 145);
             this.lblPresident.Name = "lblPresident";
-            this.lblPresident.Size = new System.Drawing.Size(76, 20);
+            this.lblPresident.Size = new System.Drawing.Size(94, 25);
             this.lblPresident.TabIndex = 14;
             this.lblPresident.Text = "President";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(53, 595);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(359, 30);
+            this.txtSearch.TabIndex = 30;
             // 
             // lblVPresident
             // 
@@ -167,9 +166,19 @@
             this.lblVPresident.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblVPresident.Location = new System.Drawing.Point(48, 208);
             this.lblVPresident.Name = "lblVPresident";
-            this.lblVPresident.Size = new System.Drawing.Size(111, 20);
+            this.lblVPresident.Size = new System.Drawing.Size(138, 25);
             this.lblVPresident.TabIndex = 15;
             this.lblVPresident.Text = "Vice President";
+            // 
+            // lblMembers
+            // 
+            this.lblMembers.AutoSize = true;
+            this.lblMembers.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblMembers.Location = new System.Drawing.Point(48, 569);
+            this.lblMembers.Name = "lblMembers";
+            this.lblMembers.Size = new System.Drawing.Size(140, 25);
+            this.lblMembers.TabIndex = 29;
+            this.lblMembers.Text = "Club Members";
             // 
             // lblSecretary
             // 
@@ -177,9 +186,20 @@
             this.lblSecretary.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblSecretary.Location = new System.Drawing.Point(48, 270);
             this.lblSecretary.Name = "lblSecretary";
-            this.lblSecretary.Size = new System.Drawing.Size(77, 20);
+            this.lblSecretary.Size = new System.Drawing.Size(96, 25);
             this.lblSecretary.TabIndex = 18;
             this.lblSecretary.Text = "Secretary";
+            // 
+            // lstMembers
+            // 
+            this.lstMembers.FormattingEnabled = true;
+            this.lstMembers.ItemHeight = 25;
+            this.lstMembers.Location = new System.Drawing.Point(52, 628);
+            this.lstMembers.Name = "lstMembers";
+            this.lstMembers.ScrollAlwaysVisible = true;
+            this.lstMembers.Size = new System.Drawing.Size(450, 229);
+            this.lstMembers.TabIndex = 28;
+            this.lstMembers.SelectedIndexChanged += new System.EventHandler(this.lstMembers_SelectedIndexChanged);
             // 
             // lblRgstDate
             // 
@@ -187,9 +207,18 @@
             this.lblRgstDate.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblRgstDate.Location = new System.Drawing.Point(48, 329);
             this.lblRgstDate.Name = "lblRgstDate";
-            this.lblRgstDate.Size = new System.Drawing.Size(108, 20);
+            this.lblRgstDate.Size = new System.Drawing.Size(129, 25);
             this.lblRgstDate.TabIndex = 20;
             this.lblRgstDate.Text = "Register Date";
+            // 
+            // txtPresident
+            // 
+            this.txtPresident.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtPresident.Location = new System.Drawing.Point(221, 142);
+            this.txtPresident.MaxLength = 50;
+            this.txtPresident.Name = "txtPresident";
+            this.txtPresident.Size = new System.Drawing.Size(281, 30);
+            this.txtPresident.TabIndex = 16;
             // 
             // lblDesc
             // 
@@ -197,9 +226,17 @@
             this.lblDesc.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblDesc.Location = new System.Drawing.Point(48, 397);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(125, 20);
+            this.lblDesc.Size = new System.Drawing.Size(155, 25);
             this.lblDesc.TabIndex = 22;
             this.lblDesc.Text = "Club Description";
+            // 
+            // txtVPresident
+            // 
+            this.txtVPresident.Location = new System.Drawing.Point(221, 202);
+            this.txtVPresident.MaxLength = 50;
+            this.txtVPresident.Name = "txtVPresident";
+            this.txtVPresident.Size = new System.Drawing.Size(281, 30);
+            this.txtVPresident.TabIndex = 17;
             // 
             // btnCancel
             // 
@@ -223,13 +260,22 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // txtRgstDate
+            // 
+            this.txtRgstDate.Location = new System.Drawing.Point(221, 326);
+            this.txtRgstDate.MaxLength = 50;
+            this.txtRgstDate.Name = "txtRgstDate";
+            this.txtRgstDate.ReadOnly = true;
+            this.txtRgstDate.Size = new System.Drawing.Size(281, 30);
+            this.txtRgstDate.TabIndex = 21;
+            // 
             // txtClubName
             // 
             this.txtClubName.Location = new System.Drawing.Point(221, 83);
             this.txtClubName.MaxLength = 50;
             this.txtClubName.Name = "txtClubName";
             this.txtClubName.ReadOnly = true;
-            this.txtClubName.Size = new System.Drawing.Size(281, 26);
+            this.txtClubName.Size = new System.Drawing.Size(281, 30);
             this.txtClubName.TabIndex = 13;
             // 
             // txtSecretary
@@ -237,57 +283,12 @@
             this.txtSecretary.Location = new System.Drawing.Point(221, 267);
             this.txtSecretary.MaxLength = 50;
             this.txtSecretary.Name = "txtSecretary";
-            this.txtSecretary.Size = new System.Drawing.Size(281, 26);
+            this.txtSecretary.Size = new System.Drawing.Size(281, 30);
             this.txtSecretary.TabIndex = 19;
-            // 
-            // txtRgstDate
-            // 
-            this.txtRgstDate.Location = new System.Drawing.Point(221, 326);
-            this.txtRgstDate.MaxLength = 50;
-            this.txtRgstDate.Name = "txtRgstDate";
-            this.txtRgstDate.ReadOnly = true;
-            this.txtRgstDate.Size = new System.Drawing.Size(281, 26);
-            this.txtRgstDate.TabIndex = 21;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(220, 394);
-            this.txtDescription.MaxLength = 500;
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(282, 145);
-            this.txtDescription.TabIndex = 24;
-            // 
-            // txtVPresident
-            // 
-            this.txtVPresident.Location = new System.Drawing.Point(221, 202);
-            this.txtVPresident.MaxLength = 50;
-            this.txtVPresident.Name = "txtVPresident";
-            this.txtVPresident.Size = new System.Drawing.Size(281, 26);
-            this.txtVPresident.TabIndex = 17;
-            // 
-            // txtPresident
-            // 
-            this.txtPresident.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtPresident.Location = new System.Drawing.Point(221, 142);
-            this.txtPresident.MaxLength = 50;
-            this.txtPresident.Name = "txtPresident";
-            this.txtPresident.Size = new System.Drawing.Size(281, 26);
-            this.txtPresident.TabIndex = 16;
-            // 
-            // txtClubID
-            // 
-            this.txtClubID.Location = new System.Drawing.Point(222, 30);
-            this.txtClubID.MaxLength = 50;
-            this.txtClubID.Name = "txtClubID";
-            this.txtClubID.ReadOnly = true;
-            this.txtClubID.Size = new System.Drawing.Size(281, 26);
-            this.txtClubID.TabIndex = 34;
             // 
             // EditClub
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 991);
             this.Controls.Add(this.panel1);
