@@ -173,6 +173,7 @@
             this.txtAch.Name = "txtAch";
             this.txtAch.Size = new System.Drawing.Size(616, 35);
             this.txtAch.TabIndex = 30;
+            this.txtAch.TextChanged += new System.EventHandler(this.txtAch_TextChanged);
             // 
             // txtAct
             // 

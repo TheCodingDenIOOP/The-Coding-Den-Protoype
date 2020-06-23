@@ -94,7 +94,7 @@ namespace WindowsFormsApp2
 
             if (mykey ==13)
             {
-                btnSearch.PerformClick();
+                button1.PerformClick();
             }
         }
 
@@ -108,6 +108,11 @@ namespace WindowsFormsApp2
             LI lo = new LI();
             lo.Show();
             this.Hide();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

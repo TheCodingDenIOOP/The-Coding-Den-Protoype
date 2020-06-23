@@ -73,11 +73,11 @@ namespace Secretary
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
-        {
+        { 
             //Insert Data 
-            if (txtName.Text != "" && txtAct.Text != "" && txtAch.Text != "")
+            if (txtName.Text != "" && txtAct.Text != "" && txtAch.Text != "") //if (variable != NULL)
             {
-                cmd = new SqlCommand("insert into WeeklyReport(Name,Activity,Achievement) values(@name,@activity,@achievement)", con);
+                cmd = new SqlCommand("INSERT INTO WeeklyReport (ClubId, Activities, Achievements) VALUES ( '" + txtName.Text + "', '" + txtAct.Text + "', '" + txtAch.Text + "')", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@name", txtName.Text);
                 cmd.Parameters.AddWithValue("@activity", txtAct.Text);
@@ -99,7 +99,7 @@ namespace Secretary
         {
             con.Open();
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from Clubs,WeeklyReport", con);
+            adapt = new SqlDataAdapter("select Weekly Report, Clubs.ClubName FROM WeeklyReport WP INNER JOIN Clubs C ON WP.ClubId = C.ClubId", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
@@ -126,11 +126,12 @@ namespace Secretary
         {
             if (txtName.Text != "" && txtAct.Text != "" && txtAch.Text != "")
             {
-                cmd = new SqlCommand("update WeeklyReport set Name=@name,Activity=@activity,Achievement=@Achievement where ID=@id", con);
+                cmd = new SqlCommand("update WP, C.ClubName FROM WeeklyReport WP INNER JOIN Clubs C ON WP.ClubId = C.ClubId set Name=@name,Activity=@activity,Achievement=@Achievement where ID=@id", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@id", ID);
                 cmd.Parameters.AddWithValue("@name", txtName.Text);
                 cmd.Parameters.AddWithValue("@activity", lblAct.Text);
+                cmd.Parameters.AddWithValue("@achievements", txtAch.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully");
                 con.Close();
@@ -147,7 +148,7 @@ namespace Secretary
         {
             if (ID != 0)
             {
-                cmd = new SqlCommand("delete WeeklyReport where ID=@id", con);
+                cmd = new SqlCommand("delete WP, C.ClubName FROM WeeklyReport WP INNER JOIN Clubs C ON WP.ClubId = C.ClubId where ID=@id", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@id", ID);
                 cmd.ExecuteNonQuery();
@@ -163,6 +164,11 @@ namespace Secretary
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAch_TextChanged(object sender, EventArgs e)
         {
 
         }

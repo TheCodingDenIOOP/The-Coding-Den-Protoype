@@ -149,11 +149,11 @@ namespace Login
             acr.Show();
         }
 
-        private void btnClubAct_Click(object sender, EventArgs e)
+       private void btnClubAct_Click(object sender, EventArgs e)
         {
-            SelectDate sd = new SelectDate();
+           /* SelectDate sd = new SelectDate();
             sd.Show();
-            this.Close();
+            this.Close(); */
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
