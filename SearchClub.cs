@@ -94,7 +94,7 @@ namespace WindowsFormsApp2
 
             if (mykey ==13)
             {
-                button1.PerformClick();
+                btnSearch.PerformClick();
             }
         }
 
