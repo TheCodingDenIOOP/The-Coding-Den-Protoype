@@ -47,6 +47,17 @@ namespace Login
                 txtDescription.Text = reader["Description"].ToString();
             }
             conn.Close();
+
+            conn.Open();
+            string strSQLMem = "SELECT * FROM Members";
+            cmd = new SqlCommand(strSQLMem, conn);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lstMembers.Items.Add(reader["MemberName"].ToString());
+            }
+            conn.Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -72,6 +83,39 @@ namespace Login
         {
             dsh.Show();
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            lstMembers.Items.Clear();
+            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
+
+            string strSQL = "SELECT * FROM Members WHERE ClubName LIKE '%" + txtSearch.Text + "%'";
+            SqlCommand cmd = new SqlCommand(strSQL, conn);
+            SqlDataReader reader;
+
+            conn.Open();
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lstMembers.Items.Add(reader["ClubName"].ToString());
+            }
+            conn.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string ClubID = txtClubID.Text;
+            AddMember am = new AddMember(ClubID);
+            am.Show();
+        }
+
+        private void lstMembers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

@@ -32,10 +32,15 @@
             this.txtClubID = new System.Windows.Forms.TextBox();
             this.lblClubID = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblClubName = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lblPresident = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblVPresident = new System.Windows.Forms.Label();
+            this.lblMembers = new System.Windows.Forms.Label();
             this.lblSecretary = new System.Windows.Forms.Label();
+            this.lstMembers = new System.Windows.Forms.ListBox();
             this.lblRgstDate = new System.Windows.Forms.Label();
             this.txtPresident = new System.Windows.Forms.TextBox();
             this.lblDesc = new System.Windows.Forms.Label();
@@ -54,10 +59,15 @@
             this.panel1.Controls.Add(this.txtClubID);
             this.panel1.Controls.Add(this.lblClubID);
             this.panel1.Controls.Add(this.txtDescription);
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.lblClubName);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.lblPresident);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.lblVPresident);
+            this.panel1.Controls.Add(this.lblMembers);
             this.panel1.Controls.Add(this.lblSecretary);
+            this.panel1.Controls.Add(this.lstMembers);
             this.panel1.Controls.Add(this.lblRgstDate);
             this.panel1.Controls.Add(this.txtPresident);
             this.panel1.Controls.Add(this.lblDesc);
@@ -78,7 +88,7 @@
             this.txtClubID.MaxLength = 50;
             this.txtClubID.Name = "txtClubID";
             this.txtClubID.ReadOnly = true;
-            this.txtClubID.Size = new System.Drawing.Size(281, 26);
+            this.txtClubID.Size = new System.Drawing.Size(281, 30);
             this.txtClubID.TabIndex = 34;
             // 
             // lblClubID
@@ -87,7 +97,7 @@
             this.lblClubID.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblClubID.Location = new System.Drawing.Point(48, 33);
             this.lblClubID.Name = "lblClubID";
-            this.lblClubID.Size = new System.Drawing.Size(62, 20);
+            this.lblClubID.Size = new System.Drawing.Size(77, 25);
             this.lblClubID.TabIndex = 33;
             this.lblClubID.Text = "Club ID";
             // 
@@ -101,15 +111,37 @@
             this.txtDescription.Size = new System.Drawing.Size(282, 145);
             this.txtDescription.TabIndex = 24;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAdd.Location = new System.Drawing.Point(385, 878);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(118, 36);
+            this.btnAdd.TabIndex = 32;
+            this.btnAdd.Text = "Add Member";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // lblClubName
             // 
             this.lblClubName.AutoSize = true;
             this.lblClubName.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblClubName.Location = new System.Drawing.Point(48, 86);
             this.lblClubName.Name = "lblClubName";
-            this.lblClubName.Size = new System.Drawing.Size(87, 20);
+            this.lblClubName.Size = new System.Drawing.Size(110, 25);
             this.lblClubName.TabIndex = 11;
             this.lblClubName.Text = "Club Name";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearch.Location = new System.Drawing.Point(413, 591);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(89, 37);
+            this.btnSearch.TabIndex = 31;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblPresident
             // 
@@ -117,9 +149,16 @@
             this.lblPresident.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblPresident.Location = new System.Drawing.Point(48, 145);
             this.lblPresident.Name = "lblPresident";
-            this.lblPresident.Size = new System.Drawing.Size(76, 20);
+            this.lblPresident.Size = new System.Drawing.Size(94, 25);
             this.lblPresident.TabIndex = 14;
             this.lblPresident.Text = "President";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(53, 595);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(359, 30);
+            this.txtSearch.TabIndex = 30;
             // 
             // lblVPresident
             // 
@@ -127,9 +166,19 @@
             this.lblVPresident.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblVPresident.Location = new System.Drawing.Point(48, 208);
             this.lblVPresident.Name = "lblVPresident";
-            this.lblVPresident.Size = new System.Drawing.Size(111, 20);
+            this.lblVPresident.Size = new System.Drawing.Size(138, 25);
             this.lblVPresident.TabIndex = 15;
             this.lblVPresident.Text = "Vice President";
+            // 
+            // lblMembers
+            // 
+            this.lblMembers.AutoSize = true;
+            this.lblMembers.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblMembers.Location = new System.Drawing.Point(48, 569);
+            this.lblMembers.Name = "lblMembers";
+            this.lblMembers.Size = new System.Drawing.Size(140, 25);
+            this.lblMembers.TabIndex = 29;
+            this.lblMembers.Text = "Club Members";
             // 
             // lblSecretary
             // 
@@ -137,9 +186,20 @@
             this.lblSecretary.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblSecretary.Location = new System.Drawing.Point(48, 270);
             this.lblSecretary.Name = "lblSecretary";
-            this.lblSecretary.Size = new System.Drawing.Size(77, 20);
+            this.lblSecretary.Size = new System.Drawing.Size(96, 25);
             this.lblSecretary.TabIndex = 18;
             this.lblSecretary.Text = "Secretary";
+            // 
+            // lstMembers
+            // 
+            this.lstMembers.FormattingEnabled = true;
+            this.lstMembers.ItemHeight = 25;
+            this.lstMembers.Location = new System.Drawing.Point(52, 628);
+            this.lstMembers.Name = "lstMembers";
+            this.lstMembers.ScrollAlwaysVisible = true;
+            this.lstMembers.Size = new System.Drawing.Size(450, 229);
+            this.lstMembers.TabIndex = 28;
+            this.lstMembers.SelectedIndexChanged += new System.EventHandler(this.lstMembers_SelectedIndexChanged);
             // 
             // lblRgstDate
             // 
@@ -147,7 +207,7 @@
             this.lblRgstDate.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblRgstDate.Location = new System.Drawing.Point(48, 329);
             this.lblRgstDate.Name = "lblRgstDate";
-            this.lblRgstDate.Size = new System.Drawing.Size(108, 20);
+            this.lblRgstDate.Size = new System.Drawing.Size(129, 25);
             this.lblRgstDate.TabIndex = 20;
             this.lblRgstDate.Text = "Register Date";
             // 
@@ -157,7 +217,7 @@
             this.txtPresident.Location = new System.Drawing.Point(221, 142);
             this.txtPresident.MaxLength = 50;
             this.txtPresident.Name = "txtPresident";
-            this.txtPresident.Size = new System.Drawing.Size(281, 26);
+            this.txtPresident.Size = new System.Drawing.Size(281, 30);
             this.txtPresident.TabIndex = 16;
             // 
             // lblDesc
@@ -166,7 +226,7 @@
             this.lblDesc.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblDesc.Location = new System.Drawing.Point(48, 397);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(125, 20);
+            this.lblDesc.Size = new System.Drawing.Size(155, 25);
             this.lblDesc.TabIndex = 22;
             this.lblDesc.Text = "Club Description";
             // 
@@ -175,13 +235,13 @@
             this.txtVPresident.Location = new System.Drawing.Point(221, 202);
             this.txtVPresident.MaxLength = 50;
             this.txtVPresident.Name = "txtVPresident";
-            this.txtVPresident.Size = new System.Drawing.Size(281, 26);
+            this.txtVPresident.Size = new System.Drawing.Size(281, 30);
             this.txtVPresident.TabIndex = 17;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(414, 558);
+            this.btnCancel.Location = new System.Drawing.Point(412, 938);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 36);
             this.btnCancel.TabIndex = 26;
@@ -192,7 +252,7 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEdit.Location = new System.Drawing.Point(251, 558);
+            this.btnEdit.Location = new System.Drawing.Point(249, 938);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(140, 36);
             this.btnEdit.TabIndex = 25;
@@ -206,7 +266,7 @@
             this.txtRgstDate.MaxLength = 50;
             this.txtRgstDate.Name = "txtRgstDate";
             this.txtRgstDate.ReadOnly = true;
-            this.txtRgstDate.Size = new System.Drawing.Size(281, 26);
+            this.txtRgstDate.Size = new System.Drawing.Size(281, 30);
             this.txtRgstDate.TabIndex = 21;
             // 
             // txtClubName
@@ -215,7 +275,7 @@
             this.txtClubName.MaxLength = 50;
             this.txtClubName.Name = "txtClubName";
             this.txtClubName.ReadOnly = true;
-            this.txtClubName.Size = new System.Drawing.Size(281, 26);
+            this.txtClubName.Size = new System.Drawing.Size(281, 30);
             this.txtClubName.TabIndex = 13;
             // 
             // txtSecretary
@@ -223,14 +283,14 @@
             this.txtSecretary.Location = new System.Drawing.Point(221, 267);
             this.txtSecretary.MaxLength = 50;
             this.txtSecretary.Name = "txtSecretary";
-            this.txtSecretary.Size = new System.Drawing.Size(281, 26);
+            this.txtSecretary.Size = new System.Drawing.Size(281, 30);
             this.txtSecretary.TabIndex = 19;
             // 
             // EditClub
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 611);
+            this.ClientSize = new System.Drawing.Size(534, 991);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -249,10 +309,15 @@
         private System.Windows.Forms.TextBox txtClubID;
         private System.Windows.Forms.Label lblClubID;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblClubName;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblPresident;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblVPresident;
+        private System.Windows.Forms.Label lblMembers;
         private System.Windows.Forms.Label lblSecretary;
+        private System.Windows.Forms.ListBox lstMembers;
         private System.Windows.Forms.Label lblRgstDate;
         private System.Windows.Forms.TextBox txtPresident;
         private System.Windows.Forms.Label lblDesc;

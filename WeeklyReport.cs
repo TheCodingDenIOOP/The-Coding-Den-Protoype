@@ -14,11 +14,8 @@ namespace Secretary
     public partial class WeeklyReport : Form
     {
         public static SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
                 "Connect Timeout = 30");
-        string id;
-        int id1;
-        int delete_id;
 
         public WeeklyReport()
         {
@@ -27,80 +24,27 @@ namespace Secretary
 
         private void WeeklyReport_Load(object sender, EventArgs e)
         {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-            con.Open();
-
-            fill_grid();
+            
         }
 
         public void fill_grid()
         {
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from WeeklyReport";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-
-
+          
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
-
-            if (id == "")
-            {
-                id1 = 0;
-            }
-            else
-            {
-                id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
-
-            }
-
-            if (id1 == 0)
-            {
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into WeeklyReport values('" + dataGridView1.Rows[e.RowIndex].Cells["ClubName"].Value.ToString() + "','" + dataGridView1.Rows[e.RowIndex].Cells["ReportDate"].Value.ToString() + "', '" + dataGridView1.Rows[e.RowIndex].Cells["Activities"].Value.ToString() + "', '" + dataGridView1.Rows[e.RowIndex].Cells["Achievements"].Value.ToString() + "')";
-                cmd.ExecuteNonQuery();
-                fill_grid();
-
-            }
-            else
-            {
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update WeeklyReport set ClubName='" + dataGridView1.Rows[e.RowIndex].Cells["ClubName"].Value.ToString() + "', ReportDate='" + dataGridView1.Rows[e.RowIndex].Cells["ReportDate"].Value.ToString() + "', Activities='" + dataGridView1.Rows[e.RowIndex].Cells["Activities"].Value.ToString() + "', Achievements='" + dataGridView1.Rows[e.RowIndex].Cells["Achievements"].Value.ToString() + "' where id=" + id1 + "";
-                cmd.ExecuteNonQuery();
-                fill_grid();
-            }
+           
         }
 
         private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-            {
-                delete_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-                this.contextMenuStrip1.Show(this.dataGridView1, e.Location);
-                contextMenuStrip1.Show(Cursor.Position);
-            }
+
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from WeeklyReport where id=" + delete_id + "";
-            cmd.ExecuteNonQuery();
-            fill_grid();
-
+          
         }
 
         private void cLUBREPRESENTATIVESECRETARYToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +77,16 @@ namespace Secretary
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

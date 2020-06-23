@@ -41,8 +41,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSIF = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -63,7 +61,7 @@
             this.lblGenerateRp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblGenerateRp.Location = new System.Drawing.Point(474, 211);
             this.lblGenerateRp.Name = "lblGenerateRp";
-            this.lblGenerateRp.Size = new System.Drawing.Size(127, 20);
+            this.lblGenerateRp.Size = new System.Drawing.Size(154, 25);
             this.lblGenerateRp.TabIndex = 6;
             this.lblGenerateRp.Text = "Generate report:";
             // 
@@ -125,11 +123,11 @@
             // lstClub
             // 
             this.lstClub.FormattingEnabled = true;
-            this.lstClub.ItemHeight = 20;
+            this.lstClub.ItemHeight = 25;
             this.lstClub.Location = new System.Drawing.Point(35, 90);
             this.lstClub.Name = "lstClub";
             this.lstClub.ScrollAlwaysVisible = true;
-            this.lstClub.Size = new System.Drawing.Size(408, 244);
+            this.lstClub.Size = new System.Drawing.Size(408, 229);
             this.lstClub.TabIndex = 12;
             // 
             // lblClublist
@@ -139,7 +137,7 @@
             this.lblClublist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblClublist.Location = new System.Drawing.Point(31, 34);
             this.lblClublist.Name = "lblClublist";
-            this.lblClublist.Size = new System.Drawing.Size(117, 20);
+            this.lblClublist.Size = new System.Drawing.Size(147, 25);
             this.lblClublist.TabIndex = 13;
             this.lblClublist.Text = "Active Club List";
             // 
@@ -147,7 +145,7 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(36, 58);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(315, 26);
+            this.txtSearch.Size = new System.Drawing.Size(315, 30);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -176,26 +174,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.btnSIF);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(639, 417);
             this.panel1.TabIndex = 17;
             // 
-            // btnSIF
-            // 
-            this.btnSIF.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSIF.Location = new System.Drawing.Point(478, 314);
-            this.btnSIF.Name = "btnSIF";
-            this.btnSIF.Size = new System.Drawing.Size(133, 31);
-            this.btnSIF.TabIndex = 18;
-            this.btnSIF.Text = "Search Club";
-            this.btnSIF.UseVisualStyleBackColor = false;
-            this.btnSIF.Click += new System.EventHandler(this.btnSIF_Click);
-            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 416);
             this.Controls.Add(this.btnRemove);
@@ -216,7 +202,6 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,6 +222,5 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSIF;
     }
 }
