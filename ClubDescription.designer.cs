@@ -66,7 +66,7 @@
             this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(691, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(691, 35);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,16 +74,19 @@
             // 
             this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uPDATEWEEKLYREPORTToolStripMenuItem});
-            this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Font = new System.Drawing.Font("Mikado Bold DEMO", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.ForeColor = System.Drawing.Color.SlateGray;
             this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Name = "cLUBREPRESENTATIVESECRETARYToolStripMenuItem";
-            this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Size = new System.Drawing.Size(388, 29);
+            this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Size = new System.Drawing.Size(367, 31);
             this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Text = "CLUB REPRESENTATIVE SECRETARY";
             this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem.Click += new System.EventHandler(this.cLUBREPRESENTATIVESECRETARYToolStripMenuItem_Click);
             // 
             // uPDATEWEEKLYREPORTToolStripMenuItem
             // 
+            this.uPDATEWEEKLYREPORTToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.uPDATEWEEKLYREPORTToolStripMenuItem.ForeColor = System.Drawing.Color.SlateGray;
             this.uPDATEWEEKLYREPORTToolStripMenuItem.Name = "uPDATEWEEKLYREPORTToolStripMenuItem";
-            this.uPDATEWEEKLYREPORTToolStripMenuItem.Size = new System.Drawing.Size(354, 30);
+            this.uPDATEWEEKLYREPORTToolStripMenuItem.Size = new System.Drawing.Size(341, 32);
             this.uPDATEWEEKLYREPORTToolStripMenuItem.Text = "UPDATE WEEKLY REPORT";
             this.uPDATEWEEKLYREPORTToolStripMenuItem.Click += new System.EventHandler(this.uPDATEWEEKLYREPORTToolStripMenuItem_Click);
             // 
@@ -91,10 +94,10 @@
             // 
             this.lblClubDes.AutoSize = true;
             this.lblClubDes.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblClubDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClubDes.Font = new System.Drawing.Font("Mithella", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClubDes.Location = new System.Drawing.Point(24, 55);
             this.lblClubDes.Name = "lblClubDes";
-            this.lblClubDes.Size = new System.Drawing.Size(255, 25);
+            this.lblClubDes.Size = new System.Drawing.Size(256, 28);
             this.lblClubDes.TabIndex = 2;
             this.lblClubDes.Text = "EDIT CLUB DESCRIPTION";
             // 
@@ -102,10 +105,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 134);
+            this.label2.Font = new System.Drawing.Font("Mithella", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 24);
+            this.label2.Size = new System.Drawing.Size(187, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Current Description";
             // 
@@ -113,10 +116,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 281);
+            this.label3.Font = new System.Drawing.Font("Mithella", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 297);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 24);
+            this.label3.Size = new System.Drawing.Size(156, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "New Description";
             // 
@@ -136,17 +139,17 @@
             // 
             this.lblClubName.AutoSize = true;
             this.lblClubName.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.lblClubName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClubName.Font = new System.Drawing.Font("Mithella", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClubName.Location = new System.Drawing.Point(35, 97);
             this.lblClubName.Name = "lblClubName";
-            this.lblClubName.Size = new System.Drawing.Size(110, 25);
+            this.lblClubName.Size = new System.Drawing.Size(108, 24);
             this.lblClubName.TabIndex = 8;
             this.lblClubName.Text = "Club Name";
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox2.Location = new System.Drawing.Point(40, 176);
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox2.Location = new System.Drawing.Point(39, 176);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -178,6 +181,8 @@
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -190,7 +195,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(471, 92);
+            this.btnClear.Location = new System.Drawing.Point(492, 92);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 34);
             this.btnClear.TabIndex = 15;
@@ -202,7 +207,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(368, 92);
+            this.btnSearch.Location = new System.Drawing.Point(380, 92);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(97, 34);
             this.btnSearch.TabIndex = 14;
@@ -218,8 +223,6 @@
             this.Controls.Add(this.txtClub);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.lblClubName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblClubDes);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
