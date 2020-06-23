@@ -83,7 +83,8 @@
     <Compile Include="ClubDescription.designer.cs">
       <DependentUpon>ClubDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClubRegistration.cs" />
+    <Compile Include="Club.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

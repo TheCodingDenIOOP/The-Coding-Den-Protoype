@@ -93,7 +93,7 @@ namespace Login
             cmd.CommandText = query;
 
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Club removed successfully!");
+            MessageBox.Show("Club activated successfully!");
 
             //Refresh lstClub
             lstClub.Items.Clear();
