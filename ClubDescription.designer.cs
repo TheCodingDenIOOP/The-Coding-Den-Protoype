@@ -159,7 +159,7 @@
             this.textBox3.Location = new System.Drawing.Point(40, 324);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(607, 88);
+            this.textBox3.Size = new System.Drawing.Size(607, 103);
             this.textBox3.TabIndex = 11;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -196,6 +196,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 

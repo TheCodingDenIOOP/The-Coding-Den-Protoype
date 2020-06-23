@@ -19,7 +19,7 @@ namespace Secretary
         SqlConnection SQLCON;
         SqlCommand cmd;
         SqlDataReader dr;
-       
+        SqlConnection conn;
 
         public ClubDescription()
         {
@@ -70,7 +70,22 @@ namespace Secretary
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            //To update the description
+            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            string query = "update Clubs set President = '" + txtPresident.Text + "', VicePresident = '" + txtVPresident.Text + "', Secretary = '" + txtSecretary.Text + "' WHERE ClubName = '" + txtClubName.Text + "'";
+            cmd.CommandText = query;
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Club Info Updated Successfully!");
+            dsh.Show();
+            this.Close();
+            conn.Close();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -131,6 +146,11 @@ namespace Secretary
             }
 
             SQLCON.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
