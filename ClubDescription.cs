@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Messaging;
 
 namespace Secretary
 {
@@ -18,7 +19,7 @@ namespace Secretary
         SqlConnection SQLCON;
         SqlCommand cmd;
         SqlDataReader dr;
-
+       
 
         public ClubDescription()
         {
@@ -27,6 +28,26 @@ namespace Secretary
 
         private void ClubDescription_Load(object sender, EventArgs e)
         {
+            //Setup autocomplete for txtClub textbox
+            SQLCON = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\DataGrid.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
+
+            string sql = "Select ClubName From ClubDesc";
+
+            SQLCON.Open();
+
+            cmd = new SqlCommand(sql, SQLCON);
+            AutoCompleteStringCollection autotext = new AutoCompleteStringCollection();
+            dr = cmd.ExecuteReader();//execute the reader
+            while (dr.Read()) //if record is found
+            { 
+                autotext.Add(dr.GetString(0));
+            }
+            txtClub.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtClub.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtClub.AutoCompleteCustomSource = autotext;
+            SQLCON.Close();
 
         }
 
@@ -66,8 +87,8 @@ namespace Secretary
             SQLCON.Open();
 
             string NewDesc = textBox3.Text;
-            string Seulgi = "INSERT INTO ClubDesc(NewDes); VALUES (@ND);";
-            SqlCommand CMD = new SqlCommand(Seulgi, SQLCON);
+            string des = "INSERT INTO ClubDesc(NewDes); VALUES (@ND);";
+            SqlCommand CMD = new SqlCommand(des, SQLCON);
             CMD.Parameters.AddWithValue("@ND", NewDesc);
             SQLCON.Close();
         }
