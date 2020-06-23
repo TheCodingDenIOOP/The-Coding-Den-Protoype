@@ -151,9 +151,9 @@ namespace Login
 
        private void btnClubAct_Click(object sender, EventArgs e)
         {
-           /* SelectDate sd = new SelectDate();
-            sd.Show();
-            this.Close(); */
+            RDLC_Report report = new RDLC_Report();
+            report.Show();
+            this.Close();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

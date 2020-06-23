@@ -140,12 +140,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 60);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(131, 32);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(130, 28);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // WeeklyReport
@@ -164,6 +164,7 @@
             this.Text = "WeeklyReport";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WeeklyReport_FormClosing);
             this.Load += new System.EventHandler(this.WeeklyReport_Load);
+            this.Click += new System.EventHandler(this.WeeklyReport_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
