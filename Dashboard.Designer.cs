@@ -41,6 +41,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSIF = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -176,10 +178,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.btnSIF);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(639, 417);
             this.panel1.TabIndex = 17;
+            // 
+            // btnSIF
+            // 
+            this.btnSIF.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSIF.Location = new System.Drawing.Point(478, 314);
+            this.btnSIF.Name = "btnSIF";
+            this.btnSIF.Size = new System.Drawing.Size(133, 31);
+            this.btnSIF.TabIndex = 18;
+            this.btnSIF.Text = "Search Club";
+            this.btnSIF.UseVisualStyleBackColor = false;
+            this.btnSIF.Click += new System.EventHandler(this.btnSIF_Click);
             // 
             // Dashboard
             // 
@@ -204,6 +218,7 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +239,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSIF;
     }
 }

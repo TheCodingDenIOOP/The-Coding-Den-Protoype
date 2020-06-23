@@ -45,6 +45,8 @@
             this.btnclear = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSt = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +98,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 290);
+            this.label4.Location = new System.Drawing.Point(62, 256);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 25);
             this.label4.TabIndex = 5;
@@ -107,7 +109,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 471);
+            this.label5.Location = new System.Drawing.Point(62, 394);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 25);
             this.label5.TabIndex = 6;
@@ -140,7 +142,7 @@
             this.lblPS.BackColor = System.Drawing.SystemColors.Control;
             this.lblPS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPS.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblPS.Location = new System.Drawing.Point(227, 293);
+            this.lblPS.Location = new System.Drawing.Point(227, 259);
             this.lblPS.Name = "lblPS";
             this.lblPS.Size = new System.Drawing.Size(295, 23);
             this.lblPS.TabIndex = 9;
@@ -151,7 +153,7 @@
             this.lblRG.BackColor = System.Drawing.SystemColors.Control;
             this.lblRG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRG.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRG.Location = new System.Drawing.Point(227, 473);
+            this.lblRG.Location = new System.Drawing.Point(227, 397);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(295, 23);
             this.lblRG.TabIndex = 10;
@@ -184,7 +186,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(62, 382);
+            this.label7.Location = new System.Drawing.Point(62, 328);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(149, 25);
             this.label7.TabIndex = 14;
@@ -195,7 +197,7 @@
             this.lblVP.BackColor = System.Drawing.SystemColors.Control;
             this.lblVP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblVP.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblVP.Location = new System.Drawing.Point(227, 385);
+            this.lblVP.Location = new System.Drawing.Point(227, 331);
             this.lblVP.Name = "lblVP";
             this.lblVP.Size = new System.Drawing.Size(295, 22);
             this.lblVP.TabIndex = 15;
@@ -229,6 +231,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.lblSt);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnclear);
             this.panel1.Controls.Add(this.lblCN);
@@ -246,6 +250,26 @@
             this.panel1.Size = new System.Drawing.Size(678, 750);
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblSt
+            // 
+            this.lblSt.BackColor = System.Drawing.SystemColors.Control;
+            this.lblSt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSt.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblSt.Location = new System.Drawing.Point(227, 473);
+            this.lblSt.Name = "lblSt";
+            this.lblSt.Size = new System.Drawing.Size(295, 23);
+            this.lblSt.TabIndex = 17;
+            this.lblSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(62, 470);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Status :";
             // 
             // CD
             // 
@@ -289,5 +313,7 @@
         private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSt;
     }
 }

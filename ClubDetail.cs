@@ -12,7 +12,9 @@ using System.Drawing.Imaging;
 using System.Data;
 
 namespace WindowsFormsApp2
-{
+{   
+
+
     public partial class CD : Form
     {
         SqlConnection SQLCON;
@@ -31,29 +33,43 @@ namespace WindowsFormsApp2
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            SQLCON = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='|DataDirectory|'TestDB.mdf;Integrated Security=True;Connect Timeout=30");
-
-            string sql = "Select ClubName, President, VicePresident, RegisterDate, Description From Clubs Where ClubName=@textS";
-
-            SQLCON.Open();
-
-            cmd = new SqlCommand(sql, SQLCON);
-            cmd.Parameters.AddWithValue("@textS",textS.Text); //define the parameter name
-            dr = cmd.ExecuteReader();//execute the reader
-            if (dr.HasRows) //if record is found
+            try
             {
-                dr.Read();
-                lblCN.Text = dr["ClubName"].ToString();
-                lblPS.Text = dr["President"].ToString();
-                lblRG.Text = dr["RegisterDate"].ToString();
-                lblI.Text = dr["Description"].ToString();
-                lblVP.Text = dr["VicePresident"].ToString();
+                SQLCON = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TestDB.mdf;Integrated Security=True;Connect Timeout=30");
+
+                string sql = "Select ClubName, President, VicePresident, RegistrationDate, Description, Status From Clubs Where ClubName=@textS";
+
+                SQLCON.Open();
+
+                cmd = new SqlCommand(sql, SQLCON);
+                cmd.Parameters.AddWithValue("@textS", textS.Text); //define the parameter name
+                dr = cmd.ExecuteReader();//execute the reader
+                if (dr.HasRows) //if record is found
+                {
+                    dr.Read();
+                    lblCN.Text = dr["ClubName"].ToString();
+                    lblPS.Text = dr["President"].ToString();
+                    lblRG.Text = dr["RegistrationDate"].ToString();
+                    lblI.Text = dr["Description"].ToString();
+                    lblVP.Text = dr["VicePresident"].ToString();
+                    lblSt.Text = dr["Status"].ToString();
+                }
+
+                SQLCON.Close();
+                dr.Close();
             }
-            
-            SQLCON.Close();
-            
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            finally
+            {
+               
+            }
+
         }
-        
+
         private void lblVP_Click(object sender, EventArgs e)
         {
 
@@ -73,7 +89,7 @@ namespace WindowsFormsApp2
             lblRG.Text = "";
             lblI.Text = "";
             lblVP.Text = "";
-           
+            lblSt.Text = "";
         }
 
         private void textS_Enter(object sender, EventArgs e)
@@ -86,10 +102,10 @@ namespace WindowsFormsApp2
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult cl;
+            DialogResult question;
 
-            cl = MessageBox.Show("Do you want to quit the APP?", "Confirm Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (cl == DialogResult.Yes) 
+            question = MessageBox.Show("Do you want to quit the APP?", "Confirm Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (question == DialogResult.Yes) 
             {
                 Application.Exit();
             }

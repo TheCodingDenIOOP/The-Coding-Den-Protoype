@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WindowsFormsApp2;
 
 namespace Login
 {
@@ -169,6 +170,13 @@ namespace Login
         private void lstClub_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSIF_Click(object sender, EventArgs e)
+        {
+            Search f3 = new Search ();
+            f3.Show();
+            this.Hide();
         }
     }
 }
