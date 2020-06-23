@@ -97,7 +97,7 @@ namespace WindowsFormsApp2
             BeginInvoke((Action)delegate
             {
                 (sender as TextBox).SelectAll();
-            });
+            }); 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
