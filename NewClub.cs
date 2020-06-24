@@ -43,21 +43,6 @@ namespace Login
             {
                 MessageBox.Show("Failed to register", "Please try again!",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            /*conn.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "insert into Clubs (ClubName, President, VicePresident, " +
-                "Secretary, RegistrationDate, Description, Status) values('" + txtClubName.Text + "'," +
-                "'" + txtPresident.Text + "', '" + txtVPresident.Text + "', '" + txtSecretary.Text + "'" +
-                ",'" + txtRgstDate.Text + "','" + txtDescription.Text + "', 'Active')";
-
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Club Registered Successfully!");
-            Dashboard dsh = new Dashboard();
-            dsh.Show();
-            this.Close();
-
-            conn.Close();*/
         }
 
         private void NewClub_Load(object sender, EventArgs e)

@@ -61,19 +61,8 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Failed to update", "Please try again!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please try again!", "Failed to update", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            /*conn.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            string query = "update Clubs set President = '" + txtPresident.Text + "', VicePresident = '" + txtVPresident.Text + "', Secretary = '" + txtSecretary.Text + "' WHERE ClubName = '" + txtClubName.Text + "'";
-            cmd.CommandText = query;
-
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Club Info Updated Successfully!");
-            dsh.Show();
-            this.Close();
-            conn.Close();*/
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
