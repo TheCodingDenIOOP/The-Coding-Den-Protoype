@@ -130,5 +130,14 @@ namespace Secretary
         {
 
         }
+
+        private void WeeklyReport_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from WeeklyReport where ReportId=" + Del_ReportId + "";
+            cmd.ExecuteNonQuery();
+            fill_grid();
+        }
     }
 }
