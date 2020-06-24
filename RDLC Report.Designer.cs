@@ -29,36 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsClubActivity = new Login.dsClubActivity();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.WeeklyReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsClubActivity = new Login.dsClubActivity();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.WeeklyReportTableAdapter = new Login.dsClubActivityTableAdapters.WeeklyReportTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsClubActivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeeklyReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsClubActivity)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // WeeklyReportBindingSource
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.WeeklyReportBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Login.ClubActivitiy.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(25, 33);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(622, 416);
-            this.reportViewer1.TabIndex = 0;
+            this.WeeklyReportBindingSource.DataMember = "WeeklyReport";
+            this.WeeklyReportBindingSource.DataSource = this.dsClubActivity;
             // 
             // dsClubActivity
             // 
             this.dsClubActivity.DataSetName = "dsClubActivity";
             this.dsClubActivity.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // WeeklyReportBindingSource
+            // reportViewer1
             // 
-            this.WeeklyReportBindingSource.DataMember = "WeeklyReport";
-            this.WeeklyReportBindingSource.DataSource = this.dsClubActivity;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.WeeklyReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Login.ClubActivitiy.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(25, 33);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(622, 416);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // WeeklyReportTableAdapter
             // 
@@ -75,8 +76,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RDLC_Report";
             this.Load += new System.EventHandler(this.RDLC_Report_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsClubActivity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeeklyReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsClubActivity)).EndInit();
             this.ResumeLayout(false);
 
         }

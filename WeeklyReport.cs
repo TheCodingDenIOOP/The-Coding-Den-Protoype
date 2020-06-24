@@ -139,5 +139,10 @@ namespace Secretary
             cmd.ExecuteNonQuery();
             fill_grid();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
