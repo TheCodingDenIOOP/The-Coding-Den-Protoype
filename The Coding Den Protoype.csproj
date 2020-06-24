@@ -71,6 +71,12 @@
     <Compile Include="ActiveClubsReport.Designer.cs">
       <DependentUpon>ActiveClubsReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminReport.Designer.cs">
+      <DependentUpon>AdminReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Archived.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="ActiveClubsReport.resx">
       <DependentUpon>ActiveClubsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminReport.resx">
+      <DependentUpon>AdminReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Archived.resx">
       <DependentUpon>Archived.cs</DependentUpon>

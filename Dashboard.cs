@@ -142,8 +142,11 @@ namespace Login
 
        private void btnClubAct_Click(object sender, EventArgs e)
         {
-            RDLC_Report report = new RDLC_Report();
+            AdminReport report = new AdminReport();
             report.Show();
+
+            /* RDLC_Report report = new RDLC_Report();
+            report.Show(); */
  
         }
 
