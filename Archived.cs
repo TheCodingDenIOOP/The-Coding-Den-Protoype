@@ -122,7 +122,7 @@ namespace Login
             if (dr == DialogResult.Yes)
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Club Activated Successfully!");
+                MessageBox.Show("Club Deleted Successfully!");
             }
 
             //Refresh lstClub
