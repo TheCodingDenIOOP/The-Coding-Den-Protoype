@@ -35,11 +35,7 @@ namespace Login
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
 
-
-
             SqlDataReader dr = cmd.ExecuteReader();
-
-
 
             if (dr.HasRows)
             {
@@ -65,6 +61,41 @@ namespace Login
             conn.Close();
 
             return role;
+        }
+
+        public int RegClub(string clubname, string president, string Vpresident, string secretary, string regDate,string description)
+        {
+            string insertSQL = "insert into Clubs (ClubName, President, VicePresident, " +
+                "Secretary, RegistrationDate, Description, Status) values('@clubname', '@president', '@Vpresident', '@secretary,  '@regDate', '@description', 'Active')";
+
+            Connect();
+            SqlCommand cmd = new SqlCommand(insertSQL, conn);
+
+            cmd.Parameters.AddWithValue("@clubname", clubname);
+            cmd.Parameters.AddWithValue("@president", president);
+            cmd.Parameters.AddWithValue("@Vpresident", Vpresident);
+            cmd.Parameters.AddWithValue("@secretary", secretary);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@regDate", regDate);
+            int status = cmd.ExecuteNonQuery();
+            conn.Close();
+            return status;
+        }
+
+        public int EditClub(string clubname, string president, string Vpresident, string secretary)
+        {
+            string insertSQL = "update Clubs set President = '@president', VicePresident = '@Vpresident', Secretary = '@secretary' WHERE ClubName = 'clubname')";
+
+            Connect();
+            SqlCommand cmd = new SqlCommand(insertSQL, conn);
+
+            cmd.Parameters.AddWithValue("@clubname", clubname);
+            cmd.Parameters.AddWithValue("@president", president);
+            cmd.Parameters.AddWithValue("@Vpresident", Vpresident);
+            cmd.Parameters.AddWithValue("@secretary", secretary);
+            int status = cmd.ExecuteNonQuery();
+            conn.Close();
+            return status;
         }
     }
 }

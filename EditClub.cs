@@ -50,7 +50,20 @@ namespace Login
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            conn.Open();
+            Controller ctrl = new Controller();
+            int status = ctrl.EditClub(txtClubName.Text, txtPresident.Text, txtVPresident.Text, txtSecretary.Text);
+
+            if (status == 1)
+            {
+                MessageBox.Show("Club Updated Successfully!");
+                dsh.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update", "Please try again!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            /*conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             string query = "update Clubs set President = '" + txtPresident.Text + "', VicePresident = '" + txtVPresident.Text + "', Secretary = '" + txtSecretary.Text + "' WHERE ClubName = '" + txtClubName.Text + "'";
@@ -60,7 +73,7 @@ namespace Login
             MessageBox.Show("Club Info Updated Successfully!");
             dsh.Show();
             this.Close();
-            conn.Close();
+            conn.Close();*/
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

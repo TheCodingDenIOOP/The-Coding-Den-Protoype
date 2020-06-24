@@ -15,9 +15,6 @@ namespace Login
 {
     public partial class LI : Form
     {
-        SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataReader dr;
         public LI()
         {
             InitializeComponent();
@@ -50,48 +47,6 @@ namespace Login
                 sr.Show();
                 this.Hide();
             }
-            /*conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True;" +
-                " Connect Timeout = 30");
-            
-            string strSQL = "SELECT * FROM Users WHERE Username = '" + txtUsername.Text + "'" +
-                " AND Password = '" + txtPw.Text + "'";
-
-            conn.Open(); 
-            
-            //create command object
-            cmd = new SqlCommand(strSQL, conn);
-            //execite the sql command and store the result in the reader
-            dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
-            {
-                dr.Read();
-                if (dr["Role"].Equals("Admin"))
-                {
-                    Dashboard dsh = new Dashboard();
-                    dsh.Show();
-                    this.Hide();
-                }
-                else if (dr["Role"].Equals("Secretary"))
-                {
-                    WeeklyReport wr = new WeeklyReport();
-                    wr.Show();
-                    this.Hide();
-                }
-                else if (dr["Role"].Equals("Student"))
-                {
-                    Search sr = new Search();
-                    sr.Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Wrong username or password.", "Log in failed", MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            dr.Close();
-            conn.Close();*/
         }
 
         private void btnExit_Click(object sender, EventArgs e)

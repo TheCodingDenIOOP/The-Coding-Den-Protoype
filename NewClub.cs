@@ -30,7 +30,20 @@ namespace Login
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            conn.Open();
+            Controller ctrl = new Controller();
+            int status = ctrl.RegClub( txtClubName.Text, txtPresident.Text, txtVPresident.Text, txtSecretary.Text, txtRgstDate.Text, txtDescription.Text);
+
+            if(status == 1)
+            {
+                MessageBox.Show("Club Registered Successfully!");
+                dsh.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Failed to register", "Please try again!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            /*conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "insert into Clubs (ClubName, President, VicePresident, " +
@@ -44,7 +57,7 @@ namespace Login
             dsh.Show();
             this.Close();
 
-            conn.Close();
+            conn.Close();*/
         }
 
         private void NewClub_Load(object sender, EventArgs e)
