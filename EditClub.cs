@@ -13,7 +13,9 @@ namespace Login
 {
     public partial class EditClub : Form
     {
-        SqlConnection conn;
+        SqlConnection conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
         Dashboard dsh = new Dashboard();
        
         public EditClub(string Str_Value)
@@ -24,9 +26,6 @@ namespace Login
 
         private void EditClub_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
             SqlCommand cmd;
             SqlDataReader reader;
 
@@ -51,10 +50,6 @@ namespace Login
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;

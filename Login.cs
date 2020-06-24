@@ -30,7 +30,27 @@ namespace Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+            Controller ctrl = new Controller();
+            string role = ctrl.SignIn(txtUsername.Text, txtPw.Text);
+            if (role == "Admin")
+            {
+                Dashboard dsh = new Dashboard();
+                dsh.Show();
+                this.Hide();
+            }
+            else if (role == "Secretary")
+            {
+                WeeklyReport wr = new WeeklyReport();
+                wr.Show();
+                this.Hide();
+            }
+            else if (role == "Student")
+            {
+                Search sr = new Search();
+                sr.Show();
+                this.Hide();
+            }
+            /*conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
                 "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True;" +
                 " Connect Timeout = 30");
             
@@ -71,7 +91,7 @@ namespace Login
                 MessageBox.Show("Wrong username or password.", "Log in failed", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             dr.Close();
-            conn.Close();
+            conn.Close();*/
         }
 
         private void btnExit_Click(object sender, EventArgs e)

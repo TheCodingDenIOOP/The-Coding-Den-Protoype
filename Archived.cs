@@ -13,7 +13,9 @@ namespace Login
 {
     public partial class Archived : Form
     {
-        SqlConnection conn;
+        SqlConnection conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
         public Archived()
         {
             InitializeComponent();
@@ -28,9 +30,6 @@ namespace Login
 
         private void Archived_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
             string strSQL = "SELECT * FROM Clubs WHERE Status = 'Archived'";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;
@@ -54,10 +53,6 @@ namespace Login
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lstClub.Items.Clear();
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-            //string strSQL = "SELECT * FROM Clubs";
             string strSQL = "SELECT * FROM Clubs WHERE (ClubName LIKE '%" + txtSearch.Text + "%') AND (Status = 'Archived')";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;
@@ -80,11 +75,6 @@ namespace Login
 
         private void btnAct_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-
-            conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             string CName = lstClub.GetItemText(lstClub.SelectedItem);
@@ -119,10 +109,6 @@ namespace Login
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;

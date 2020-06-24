@@ -14,7 +14,9 @@ namespace Login
     public partial class NewClub : Form
     {
         Dashboard dsh = new Dashboard();
-        SqlConnection conn;
+        SqlConnection conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
         public NewClub()
         {
             InitializeComponent();
@@ -28,10 +30,6 @@ namespace Login
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -47,6 +45,11 @@ namespace Login
             this.Close();
 
             conn.Close();
+        }
+
+        private void NewClub_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,7 +13,9 @@ namespace Login
 {
     public partial class ActiveClubsReport : Form
     {
-        SqlConnection conn;
+        SqlConnection conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
         public ActiveClubsReport()
         {
             InitializeComponent();
@@ -26,9 +28,6 @@ namespace Login
 
         private void ActiveClubsReport_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
             string strSQL = "SELECT * FROM Clubs WHERE Status = 'Active'";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,19 +15,19 @@ namespace Login
         private string VicePresident;
         private string Secretary;
         private string Description;
-        private DateTime RegistrationDate;
+        private string RegistrationDate;
 
         //Constructor
-        public Club(string ClubId, string ClubName, DateTime RegistrationDate, string President, string VicePresident, string Secretary, string Description, string clubId = null, string clubName = null, string president = null, string vicePresident = null, string secretary = null, string description = null, DateTime registrationDate = default)
+        public Club(string clubid, string clubname, string president, string Vpresident, string secretary, string description, string regDate)
         {
             //Initialization of data field values
-            this.ClubId = clubId;
-            this.ClubName = clubName;
+            this.ClubId = clubid;
+            this.ClubName = clubname;
             this.President = president;
-            this.VicePresident = vicePresident;
+            this.VicePresident = Vpresident;
             this.Secretary = secretary;
             this.Description = description;
-            this.RegistrationDate = registrationDate;
+            this.RegistrationDate = regDate;
         }
 
         //Declaration of properties
@@ -36,7 +37,7 @@ namespace Login
         public string VicePresident1 { get => VicePresident; set => VicePresident = value; }
         public string Secretary1 { get => Secretary; set => Secretary = value; }
         public string Description1 { get => Description; set => Description = value; }
-        public DateTime RegistrationDate1 { get => RegistrationDate; set => RegistrationDate = value; }
+        public string RegistrationDate1 { get => RegistrationDate; set => RegistrationDate = value; }
 
 
     }

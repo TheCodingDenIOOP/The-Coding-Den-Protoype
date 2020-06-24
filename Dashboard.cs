@@ -15,7 +15,9 @@ namespace Login
 {
     public partial class Dashboard : Form
     {
-        SqlConnection conn;
+        SqlConnection conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
+                "Connect Timeout = 30");
 
         public Dashboard()
         {
@@ -25,9 +27,6 @@ namespace Login
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
             string strSQL = "SELECT * FROM Clubs WHERE Status = 'Active'";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;
@@ -73,10 +72,6 @@ namespace Login
         private void btnSearch_Click(object sender, EventArgs e)
         {
             lstClub.Items.Clear();
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-            //string strSQL = "SELECT * FROM Clubs";
             string strSQL = "SELECT * FROM Clubs WHERE (ClubName LIKE '%" + txtSearch.Text + "%') AND (Status = 'Active')";
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             SqlDataReader reader;
@@ -106,10 +101,6 @@ namespace Login
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = |DataDirectory|\\TestDB.mdf; Integrated Security = True; " +
-                "Connect Timeout = 30");
-
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
